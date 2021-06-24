@@ -102,7 +102,13 @@ class _HomePageState extends State<HomePage> {
                             textColor: Colors.white,
                           );
                       }
+
                       return MyButton(
+                        buttonTapped: () {
+                          setState(() {
+                            userQuestion += buttons[index];
+                          });
+                        },
                         buttonText: buttons[index],
                         color: isOperator(buttons[index])
                             ? Colors.deepPurple
