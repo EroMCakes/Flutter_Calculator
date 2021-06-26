@@ -131,11 +131,9 @@ class _HomePageState extends State<HomePage> {
                             textColor: Colors.white,
                           );
                       }
-
                       return MyButton(
                         buttonTapped: () {
                           setState(() {
-<<<<<<< HEAD
                             if (isOperator(buttons[index]))
                             {
                               if (!isOperator(userQuestion[userQuestion.length - 1]))
@@ -156,9 +154,6 @@ class _HomePageState extends State<HomePage> {
                               }
                             else
                               userQuestion += buttons[index];
-=======
-                            userQuestion += buttons[index];
->>>>>>> 151ea6380fde0acd0a33cd992f9880cdd0c58802
                           });
                         },
                         buttonText: buttons[index],
