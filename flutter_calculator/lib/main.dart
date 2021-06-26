@@ -94,38 +94,39 @@ class _HomePageState extends State<HomePage> {
                         case 0:
                           return MyButton(
                             buttonTapped: () {
-                          setState(() {
-                            userQuestion = '';
-                            userAnswer = '';
-                          });
-                        },
+                              setState(() {
+                                userQuestion = '';
+                                userAnswer = '';
+                              });
+                            },
                             buttonText: buttons[index],
                             color: Colors.green,
                             textColor: Colors.white,
                           );
 
-                          //Delete button
+                        //Delete button
                         case 1:
                           return MyButton(
                             buttonTapped: () {
-                          setState(() {
-                            if (userQuestion != '')
-                             userQuestion = userQuestion.substring(0, userQuestion.length - 1);
-                          });
-                        },
+                              setState(() {
+                                if (userQuestion != '')
+                                  userQuestion = userQuestion.substring(
+                                      0, userQuestion.length - 1);
+                              });
+                            },
                             buttonText: buttons[index],
                             color: Colors.red,
                             textColor: Colors.white,
                           );
 
-                          //Equal button
-                          case 19:
+                        //Equal button
+                        case 19:
                           return MyButton(
                             buttonTapped: () {
-                          setState(() {
-                            equalPressed();
-                          });
-                        },
+                              setState(() {
+                                equalPressed();
+                              });
+                            },
                             buttonText: buttons[index],
                             color: Colors.red,
                             textColor: Colors.white,
@@ -178,11 +179,10 @@ class _HomePageState extends State<HomePage> {
       return false;
   }
 
-  void equalPressed()
-  {
+  void equalPressed() {
     String finalQuestion = userQuestion;
     finalQuestion = finalQuestion.replaceAll('x', '*');
-    
+
     Parser p = Parser();
     Expression exp = p.parse(finalQuestion);
     ContextModel cm = ContextModel();
