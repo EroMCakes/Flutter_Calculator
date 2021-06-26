@@ -94,38 +94,39 @@ class _HomePageState extends State<HomePage> {
                         case 0:
                           return MyButton(
                             buttonTapped: () {
-                          setState(() {
-                            userQuestion = '';
-                            userAnswer = '';
-                          });
-                        },
+                              setState(() {
+                                userQuestion = '';
+                                userAnswer = '';
+                              });
+                            },
                             buttonText: buttons[index],
                             color: Colors.green,
                             textColor: Colors.white,
                           );
 
-                          //Delete button
+                        //Delete button
                         case 1:
                           return MyButton(
                             buttonTapped: () {
-                          setState(() {
-                            if (userQuestion != '')
-                             userQuestion = userQuestion.substring(0, userQuestion.length - 1);
-                          });
-                        },
+                              setState(() {
+                                if (userQuestion != '')
+                                  userQuestion = userQuestion.substring(
+                                      0, userQuestion.length - 1);
+                              });
+                            },
                             buttonText: buttons[index],
                             color: Colors.red,
                             textColor: Colors.white,
                           );
 
-                          //Equal button
-                          case 19:
+                        //Equal button
+                        case 19:
                           return MyButton(
                             buttonTapped: () {
-                          setState(() {
-                            equalPressed();
-                          });
-                        },
+                              setState(() {
+                                equalPressed();
+                              });
+                            },
                             buttonText: buttons[index],
                             color: Colors.red,
                             textColor: Colors.white,
@@ -135,30 +136,7 @@ class _HomePageState extends State<HomePage> {
                       return MyButton(
                         buttonTapped: () {
                           setState(() {
-<<<<<<< HEAD
-                            if (isOperator(buttons[index]))
-                            {
-                              if (!isOperator(userQuestion[userQuestion.length - 1]))
-                              {
-                                if (userAnswer != '')
-                                {
-                                  userQuestion = userAnswer + buttons[index];
-                                  userAnswer = '';
-                                }
-                                else
-                                  userQuestion += buttons[index];
-                              }
-                            }
-                            else if (userAnswer != '')
-                              {
-                                userAnswer = '';
-                                userQuestion = '' + buttons[index];
-                              }
-                            else
-                              userQuestion += buttons[index];
-=======
                             userQuestion += buttons[index];
->>>>>>> 151ea6380fde0acd0a33cd992f9880cdd0c58802
                           });
                         },
                         buttonText: buttons[index],
@@ -183,11 +161,10 @@ class _HomePageState extends State<HomePage> {
       return false;
   }
 
-  void equalPressed()
-  {
+  void equalPressed() {
     String finalQuestion = userQuestion;
     finalQuestion = finalQuestion.replaceAll('x', '*');
-    
+
     Parser p = Parser();
     Expression exp = p.parse(finalQuestion);
     ContextModel cm = ContextModel();
